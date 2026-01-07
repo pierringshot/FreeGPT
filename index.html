@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>TypeGPT // CYBER-ARCHITECT</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter (UI) & JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              black: 'var(--bg-black)',
+              dark: 'var(--bg-dark)',
+              panel: 'var(--bg-panel)',
+              border: 'var(--border-color)',
+              text: 'var(--text-main)',
+              muted: 'var(--text-muted)'
+            },
+            neon: {
+              green: 'var(--accent-green)',
+              blue: 'var(--accent-blue)',
+              purple: 'var(--accent-purple)',
+              red: 'var(--accent-red)'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          animation: {
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glitch': 'glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite',
+          },
+          keyframes: {
+            glitch: {
+              '0%': { transform: 'translate(0)' },
+              '20%': { transform: 'translate(-2px, 2px)' },
+              '40%': { transform: 'translate(-2px, -2px)' },
+              '60%': { transform: 'translate(2px, 2px)' },
+              '80%': { transform: 'translate(2px, -2px)' },
+              '100%': { transform: 'translate(0)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* CSS Variables for Theming */
+    :root {
+      /* Light Mode (Corporate/Clean) */
+      --bg-black: #ffffff;
+      --bg-dark: #f3f4f6;
+      --bg-panel: #ffffff;
+      --border-color: #e5e7eb;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      
+      --accent-green: #059669;
+      --accent-blue: #2563eb;
+      --accent-purple: #7c3aed;
+      --accent-red: #dc2626;
+    }
+
+    .dark {
+      /* Dark Mode (Cyberpunk) */
+      --bg-black: #050505;
+      --bg-dark: #0a0a0a;
+      --bg-panel: #0f0f0f;
+      --border-color: #1f1f1f;
+      --text-main: #e0e0e0;
+      --text-muted: #666666;
+      
+      --accent-green: #00ff41;
+      --accent-blue: #00d1ff;
+      --accent-purple: #b537f2;
+      --accent-red: #ff003c;
+    }
+
+    body { 
+      background-color: var(--bg-black); 
+      color: var(--text-main); 
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    /* Cyber Scrollbar */
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg-black); }
+    ::-webkit-scrollbar-thumb { background: var(--border-color); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-green); }
+
+    .input-cyber {
+      background: var(--bg-black);
+      border: 1px solid var(--border-color);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      color: var(--accent-green);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .input-cyber:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 15px rgba(0, 209, 255, 0.1);
+      outline: none;
+    }
+
+    .glitch-hover:hover {
+      text-shadow: 2px 0 var(--accent-green), -2px 0 var(--accent-purple);
+    }
+
+    ::selection {
+      background: var(--accent-green);
+      color: #000;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "rxjs": "https://esm.sh/rxjs@^7.8.2?conditions=es2015",
+    "rxjs/operators": "https://esm.sh/rxjs@^7.8.2/operators?conditions=es2015",
+    "rxjs/ajax": "https://esm.sh/rxjs@^7.8.2/ajax?conditions=es2015",
+    "rxjs/webSocket": "https://esm.sh/rxjs@^7.8.2/webSocket?conditions=es2015",
+    "rxjs/testing": "https://esm.sh/rxjs@^7.8.2/testing?conditions=es2015",
+    "rxjs/fetch": "https://esm.sh/rxjs@^7.8.2/fetch?conditions=es2015",
+    "@angular/compiler": "https://esm.sh/@angular/compiler@^21.0.6?external=rxjs",
+    "@angular/core": "https://esm.sh/@angular/core@^21.0.6?external=rxjs",
+    "@angular/common": "https://esm.sh/@angular/common@^21.0.6?external=rxjs",
+    "@angular/forms": "https://esm.sh/@angular/forms@^21.0.6?external=rxjs",
+    "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@^21.0.6?external=rxjs",
+    "marked": "https://esm.sh/marked@12.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
